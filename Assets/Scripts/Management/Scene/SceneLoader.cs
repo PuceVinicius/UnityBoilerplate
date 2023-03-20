@@ -14,11 +14,11 @@ namespace Boilerplate.SceneManagement
         [SerializeField] private GenericScenes _genericScenes;
 
         [Foldout("Listeners")]
-        [SerializeField] private GameSceneEventChannel _loadSceneChannel;
+        [SerializeField] private GameSceneEventChannel _loadSceneEvent;
 
         [Foldout("Broadcasters")]
-        [SerializeField] private GameSceneEventChannel _onSceneLoadedChannel;
-        [SerializeField] private BoolEventChannel _toggleLoadingScreenChannel;
+        [SerializeField] private GameSceneEventChannel _onSceneLoadedEvent;
+        [SerializeField] private BoolEventChannel _toggleLoadingScreenEvent;
 
         private GameScene _currentSceneLoaded = null;
 
@@ -27,12 +27,12 @@ namespace Boilerplate.SceneManagement
 
         private void OnEnable()
         {
-            EventUtils.AddEventListener(_loadSceneChannel, LoadScene);
+            EventUtils.AddEventListener(_loadSceneEvent, LoadScene);
         }
 
         private void OnDisable()
         {
-            EventUtils.RemoveEventListener(_loadSceneChannel, LoadScene);
+            EventUtils.RemoveEventListener(_loadSceneEvent, LoadScene);
         }
 
         private void Start()
@@ -65,15 +65,15 @@ namespace Boilerplate.SceneManagement
         {
             _isLoading = true;
             if (nextScene.HasLoadingScreen)
-                EventUtils.BroadcastEvent(_toggleLoadingScreenChannel, true);
+                EventUtils.BroadcastEvent(_toggleLoadingScreenEvent, true);
         }
 
         private void OnLoadEnd(GameScene nextScene)
         {
             _isLoading = false;
             if (nextScene.HasLoadingScreen)
-                EventUtils.BroadcastEvent(_toggleLoadingScreenChannel, false);
-            EventUtils.BroadcastEvent(_onSceneLoadedChannel, _currentSceneLoaded);
+                EventUtils.BroadcastEvent(_toggleLoadingScreenEvent, false);
+            EventUtils.BroadcastEvent(_onSceneLoadedEvent, _currentSceneLoaded);
         }
 
         private IEnumerator UnloadPreviousScene()
