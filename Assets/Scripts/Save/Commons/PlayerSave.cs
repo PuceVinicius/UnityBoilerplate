@@ -15,10 +15,10 @@ namespace Boilerplate.SaveCommons
 
         public int SaveVersion => saveVersion;
 
-        #endregion
+        #endregion Properties
 
         #region Methods
 
-        #endregion
+        #endregion Methods
     }
 }

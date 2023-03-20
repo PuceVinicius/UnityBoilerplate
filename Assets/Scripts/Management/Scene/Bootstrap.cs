@@ -10,21 +10,28 @@ namespace Boilerplate.SceneManagement
 {
     public class Bootstrap : MonoBehaviour
     {
+        #region Variables
+
         [Foldout("References")]
         [SerializeField] private GenericScenes _genericScenes;
 
         [Foldout("Broadcasters")]
         [SerializeField] private AssetReference _loadSceneChannel;
 
-        public static bool IsColdStartup = true;
+        #endregion
+
+        #region Messages
 
         private void Start()
         {
-            IsColdStartup = false;
+            SceneManagementStatics.IsColdStartup = false;
 
-            _genericScenes.ManagersScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive, true).Completed +=
-                LoadEventChannel;
+            _genericScenes.ManagersScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive, true).Completed += LoadEventChannel;
         }
+
+        #endregion
+
+        #region Methods
 
         private void LoadEventChannel(AsyncOperationHandle<SceneInstance> obj)
         {
@@ -37,5 +44,7 @@ namespace Boilerplate.SceneManagement
 
             SceneManager.UnloadSceneAsync(0);
         }
+
+        #endregion
     }
 }

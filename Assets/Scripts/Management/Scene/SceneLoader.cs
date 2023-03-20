@@ -38,7 +38,7 @@ namespace Boilerplate.SceneManagement
         private void Start()
         {
 #if UNITY_EDITOR
-            if (Bootstrap.IsColdStartup)
+            if (SceneManagementStatics.IsColdStartup)
                 GetColdStartupScene();
 #endif
         }
@@ -113,7 +113,7 @@ namespace Boilerplate.SceneManagement
 
         private void UnloadColdStartupScene()
         {
-            if (!Bootstrap.IsColdStartup)
+            if (!SceneManagementStatics.IsColdStartup)
                 return;
 
             if (_coldStartupSceneName == "")

@@ -9,10 +9,8 @@ namespace Boilerplate.SceneManagement
     {
         #region Variables
 
-        [Foldout("General")]
+        [Foldout("References")]
         [SerializeField] private GameScene _managersScene;
-
-        [Foldout("Initial Scene Flow")]
         [SerializeField] private GameScene _onboardingScene;
         [SerializeField] private GameScene _menuScene;
 
