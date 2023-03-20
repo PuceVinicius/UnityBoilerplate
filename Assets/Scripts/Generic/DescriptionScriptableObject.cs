@@ -6,6 +6,6 @@ namespace Boilerplate.Generic
 {
     public abstract class DescriptionScriptableObject : ScriptableObject
     {
-        [TextArea, SerializeField] private string description;
+        [TextArea] [SerializeField] private string description;
     }
 }
