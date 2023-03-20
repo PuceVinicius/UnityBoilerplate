@@ -2,7 +2,6 @@ using Boilerplate.Attributes;
 using Boilerplate.EventChannels;
 using Boilerplate.FuncChannels;
 using Boilerplate.SaveCommons;
-using Boilerplate.Generic;
 using UnityEngine;
 
 namespace Boilerplate.Save
