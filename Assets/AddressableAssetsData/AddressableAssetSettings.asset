@@ -34,9 +34,9 @@ MonoBehaviour:
   m_MonoScriptBundleNaming: 0
   m_MonoScriptBundleCustomNaming: 
   m_RemoteCatalogBuildPath:
-    m_Id: 
+    m_Id: 4428ecba9d691fa4eaca50f3f0a94415
   m_RemoteCatalogLoadPath:
-    m_Id: 
+    m_Id: 463f3925478f4814bbc0265c97db8235
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
   m_overridePlayerVersion: 
@@ -47,6 +47,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 403f6eec75cd4a944b0f5c2e1b6a3ff1, type: 2}
   - {fileID: 11400000, guid: 8c43c74cf64b82348b3acb0b90561719, type: 2}
   - {fileID: 11400000, guid: 8e5cf05742be5f9469df86ad317116de, type: 2}
+  - {fileID: 11400000, guid: a000dfc92f3811645b446703a994e783, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
