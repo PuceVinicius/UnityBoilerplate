@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 
 namespace Boilerplate.SceneManagement
 {
-    [CreateAssetMenu(fileName = "New GameSceneData", menuName = "ScriptableObjects/GameScene/Data")]
+    [CreateAssetMenu(fileName = "New GameScene", menuName = "ScriptableObjects/GameScene")]
     public class GameScene : DescriptionScriptableObject
     {
         #region Variables

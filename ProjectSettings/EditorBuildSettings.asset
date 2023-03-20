@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
-  m_configObjects: {}
+    path: Assets/Scenes/Bootstrap.unity
+    guid: 49fe1f00436581844841d8965303e459
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: ff6ded5e0341c2247886883af42fedda,
+      type: 2}
