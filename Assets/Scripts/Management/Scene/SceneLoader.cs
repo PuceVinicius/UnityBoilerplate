@@ -10,6 +10,8 @@ namespace Boilerplate.SceneManagement
 {
     public class SceneLoader : MonoBehaviour
     {
+        #region Variables
+
         [Foldout("References")]
         [SerializeField] private GenericScenes _genericScenes;
 
@@ -24,6 +26,10 @@ namespace Boilerplate.SceneManagement
 
         private bool _isLoading = false;
         private string _coldStartupSceneName = "";
+
+        #endregion Variables
+
+        #region Messages
 
         private void OnEnable()
         {
@@ -42,6 +48,10 @@ namespace Boilerplate.SceneManagement
                 GetColdStartupScene();
 #endif
         }
+
+        #endregion Messages
+
+        #region Methods
 
         private void LoadScene(GameScene nextScene)
         {
@@ -122,6 +132,9 @@ namespace Boilerplate.SceneManagement
             SceneManager.UnloadSceneAsync(_coldStartupSceneName);
             _coldStartupSceneName = "";
         }
+
 #endif
+
+        #endregion Methods
     }
 }
