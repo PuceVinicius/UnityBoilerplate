@@ -1,5 +1,5 @@
 using Boilerplate.Attributes;
-using Boilerplate.Generic;
+using Boilerplate.Utilities;
 using UnityEngine;
 
 namespace Boilerplate.SceneManagement
@@ -13,6 +13,7 @@ namespace Boilerplate.SceneManagement
         [SerializeField] private GameScene _managersScene;
         [SerializeField] private GameScene _onboardingScene;
         [SerializeField] private GameScene _menuScene;
+        [SerializeField] private GameScene _gameplayScene;
 
         #endregion
 
@@ -21,6 +22,7 @@ namespace Boilerplate.SceneManagement
         public GameScene ManagersScene => _managersScene;
         public GameScene OnboardingScene => _onboardingScene;
         public GameScene MenuScene => _menuScene;
+        public GameScene GameplayScene => _gameplayScene;
 
         #endregion
     }

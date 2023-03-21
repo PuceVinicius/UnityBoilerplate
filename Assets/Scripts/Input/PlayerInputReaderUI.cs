@@ -16,6 +16,7 @@ namespace Boilerplate.Input
         [SerializeField] private VoidEventChannel _inputUIBackEvent;
         [SerializeField] private VoidEventChannel _inputUINextEvent;
         [SerializeField] private VoidEventChannel _inputUIPreviousEvent;
+        [SerializeField] private VoidEventChannel _inputUIPauseEvent;
 
         #endregion Variables
 
@@ -53,6 +54,14 @@ namespace Boilerplate.Input
             EventUtils.BroadcastEvent(_inputUIPreviousEvent);
         }
 
-        #endregion
+        public void OnUIPauseInput(InputAction.CallbackContext context)
+        {
+            if (context.phase != InputActionPhase.Performed)
+                return;
+
+            EventUtils.BroadcastEvent(_inputUIPauseEvent);
+        }
+
+        #endregion UI Callbacks
     }
 }

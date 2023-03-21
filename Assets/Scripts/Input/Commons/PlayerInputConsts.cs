@@ -6,7 +6,7 @@ namespace Boilerplate.InputCommons
 {
     public static class PlayerInputConsts
     {
-        public const string ACTIONMAP_UI = "UI";
-        public const string ACTIONMAP_GAMEPLAY = "Player";
+        public const string ACTION_MAP_UI = "UI";
+        public const string ACTION_MAP_GAMEPLAY = "Gameplay";
     }
 }

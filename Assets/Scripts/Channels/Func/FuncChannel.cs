@@ -1,5 +1,5 @@
 using System;
-using Boilerplate.Generic;
+using Boilerplate.Utilities;
 
 namespace Boilerplate.FuncChannels
 {

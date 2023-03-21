@@ -1,5 +1,5 @@
 using Boilerplate.Attributes;
-using Boilerplate.Generic;
+using Boilerplate.Utilities;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 

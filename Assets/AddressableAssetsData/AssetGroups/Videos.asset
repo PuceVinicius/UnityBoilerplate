@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Videos
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: Videos
   m_Data:
     m_SerializedData: []
   m_GUID: b57f075accd97eb4f9a349bcfacb904f
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 97ec33d2cba9eec42ba1b193dc6070d1
+    m_Address: Assets/Videos
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 337c34f6313d88040964aa2bc5e1204a, type: 2}
   m_SchemaSet:

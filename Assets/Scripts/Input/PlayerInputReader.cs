@@ -1,5 +1,6 @@
 using Boilerplate.Attributes;
 using Boilerplate.EventChannels;
+using Boilerplate.InputCommons;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,7 +19,8 @@ namespace Boilerplate.Input
 
         [Foldout("Listeners")]
         [SerializeField] private BoolEventChannel _onToggleInputsEvent;
-        [SerializeField] private StringEventChannel _onChangeInputSchemeEvent;
+        [SerializeField] private VoidEventChannel _setUIActionMapEvent;
+        [SerializeField] private VoidEventChannel _setGameplayActionMapEvent;
 
         #endregion Variables
 
@@ -27,23 +29,24 @@ namespace Boilerplate.Input
         private void OnEnable()
         {
             EventUtils.AddEventListener(_onToggleInputsEvent, OnToggleInputs);
-            EventUtils.AddEventListener(_onChangeInputSchemeEvent, SwitchActionMap);
+            EventUtils.AddEventListener(_setUIActionMapEvent, SetUIActionMap);
+            EventUtils.AddEventListener(_setGameplayActionMapEvent, SetGameplayActionMap);
         }
 
         private void OnDisable()
         {
             EventUtils.RemoveEventListener(_onToggleInputsEvent, OnToggleInputs);
-            EventUtils.RemoveEventListener(_onChangeInputSchemeEvent, SwitchActionMap);
+            EventUtils.RemoveEventListener(_setUIActionMapEvent, SetUIActionMap);
+            EventUtils.RemoveEventListener(_setGameplayActionMapEvent, SetGameplayActionMap);
         }
 
         #endregion Messages
 
         #region Methods
 
-        private void SwitchActionMap(string actionMap)
-        {
-            _playerInput.SwitchCurrentActionMap(actionMap);
-        }
+        private void SetUIActionMap() => SwitchActionMap(PlayerInputConsts.ACTION_MAP_UI);
+        private void SetGameplayActionMap() => SwitchActionMap(PlayerInputConsts.ACTION_MAP_GAMEPLAY);
+        private void SwitchActionMap(string actionMap) => _playerInput.SwitchCurrentActionMap(actionMap);
 
         private void OnToggleInputs(bool value)
         {
@@ -65,10 +68,7 @@ namespace Boilerplate.Input
             EventUtils.BroadcastEvent(_onControlsChangedEvent, _playerInput);
         }
 
-        public void OnAnyInput(InputAction.CallbackContext context)
-        {
-            EventUtils.BroadcastEvent(_inputAnyEvent);
-        }
+        public void OnAnyInput(InputAction.CallbackContext context) => EventUtils.BroadcastEvent(_inputAnyEvent);
 
         #endregion Input Callbacks
     }

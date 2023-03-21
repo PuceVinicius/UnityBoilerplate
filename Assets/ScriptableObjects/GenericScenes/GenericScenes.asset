@@ -16,3 +16,4 @@ MonoBehaviour:
   _managersScene: {fileID: 11400000, guid: ee79c721088c09549a0719ed66c664f2, type: 2}
   _onboardingScene: {fileID: 11400000, guid: 1228bde981d39d74196c7ba03b2446c9, type: 2}
   _menuScene: {fileID: 11400000, guid: e259ac09320675e46900293aa98e5081, type: 2}
+  _gameplayScene: {fileID: 11400000, guid: 93c2de045ab43a14296e2a1c4dcf2946, type: 2}
